@@ -1,0 +1,9 @@
+{
+  "generator-duiker": {
+    "promptValues": {
+      "group": "com.lss",
+      "name": "user",
+      "mysqlURL": "mysql://root:77545211@localhost/user?debug-true&charset"
+    }
+  }
+}
