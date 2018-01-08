@@ -10,11 +10,11 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
 
 
-#    # redis测试环境
-#    redis:
-#        host: 172.19.197.255
-#        port: 6379
-#        password: zhangdan@91
+    # redis测试环境
+    redis:
+        host: 172.0.0.1
+        port: 6379
+        password:
 
 
 # swagger开关 true/false

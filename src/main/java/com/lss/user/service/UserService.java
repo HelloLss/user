@@ -1,7 +1,7 @@
 package com.lss.user.service;
 
-import com.lss.user.web.rest.vo.request.RegisterRequest;
-import com.lss.user.web.rest.vo.response.Token;
+import com.lss.user.web.rest.request.RegisterRequest;
+import com.lss.user.web.rest.response.Token;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

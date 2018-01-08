@@ -35,3 +35,21 @@ mybatis-plus:
     configuration:
         map-underscore-to-camel-case: true
         cache-enabled: false
+
+swagger:
+    project:
+        version: 0.0.1-SNAPSHOT
+        title: rebates
+        description:
+
+encrypt:
+    rsa:
+      publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCb+XOyWlEHET3tZ3pWFlLBozFgzifKNK/Ez7RpDKHdxKzEN8CznR35bs/b2bNLfmAwKVJUQEHAJNZ/icNtF2UJJRanx6IgHhEcsAISiZ5zORPFzTcxAjsbeoK2wOfE6XcXvQ61HBktdtDWUIqTh75VdFJKTSSZalsvPw7eDR74nQIDAQAB
+      privateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJv5c7JaUQcRPe1nelYWUsGjMWDOJ8o0r8TPtGkMod3ErMQ3wLOdHfluz9vZs0t+YDApUlRAQcAk1n+Jw20XZQklFqfHoiAeERywAhKJnnM5E8XNNzECOxt6grbA58Tpdxe9DrUcGS120NZQipOHvlV0UkpNJJlqWy8/Dt4NHvidAgMBAAECgYAA0jJauQD+MYgK7OWG+H0dCdfjs5IgDWDzf0hq2Scs/LEQI17/Uw9qVbwAY0f/WL324vDNAr2V3lvGthnyRBJDFPOIcvM60Gd3/p1Keu1VYWhHBaHrtk5OlMu7Z3ynvq+OstYBIYnDqClscuV9t+6aJjC54HfohL/34qln+NwL3QJBANi/RRAluO5rvdRjrv6c3/O2FNGclLQBrv7RsQF1nYDIvvMzBERYVL706xMqSQbRUCsjlIOZ5zTGf0vhPUoWueMCQQC4OKpVxsfr6VdgOuMCnG5cn2nQm9bB93eJjr2byMyg2ddiMcppRMhyymYt1o8yxl/3pt50Xi8fs2GRwZA9dAt/AkAoFlAWqXNnnUOxuXIPI0KEV6PIFNan6DvOY0gChhdIT1iJsGDUpyWdX7zugX6aJTJXmDAKmvdZGnFGvnTQdB2TAkAXa7zcIuWP7J6bMWFjF5hAVlQRnX50Mo4UAv3ALIs3d/qWFVZyg7goP+s1sK2L+wSAa8qkaMT89sVUzpMT/QjpAkEAuCurDh/uGL0YDiTz/yzsa7Y7reLC+L7BY0jywV2YnPCxyhwUJDPi06yqLN29vM5bX44XVjhUNCxX38XtkiJmuA==
+
+# Jwt
+jwt:
+    clientId: d2Vmdw==
+    base64Secret: OTF6MjM0OTh5dGhncmlnZWhhbmdkYWVyZ2VyZ24=
+    name: 91zhangdan
+    expiresMillis: 2592000000 # 三十天

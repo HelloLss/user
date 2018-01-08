@@ -1,4 +1,4 @@
-package com.lss.user.web.rest.vo.request;
+package com.lss.user.web.rest.request;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -11,13 +11,13 @@ import lombok.Data;
 public class RegisterRequest {
 
     // 可通过  -> 账号密码登陆(账号也是手机号)
+    // 也可通过 -> 手机号和验证码登陆
     @ApiModelProperty(value = "昵称")
     private String nickName;
 
     @ApiModelProperty(value = "密码")
     private String password;
 
-    // 也可通过 -> 手机号和验证码登陆
     @ApiModelProperty(value = "手机号")
     private String phoneNumber;
 

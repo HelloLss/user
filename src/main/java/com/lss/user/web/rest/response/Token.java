@@ -1,4 +1,4 @@
-package com.lss.user.web.rest.vo.response;
+package com.lss.user.web.rest.response;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
