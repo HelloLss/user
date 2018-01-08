@@ -1,12 +1,14 @@
 package com.lss.user.web.rest;
 
 import com.lss.user.exception.UserException;
+import com.lss.user.service.MessageService;
 import com.lss.user.service.UserService;
 import com.lss.user.web.rest.response.Token;
 import com.lss.user.web.rest.request.RegisterRequest;
 import com.xiaoleilu.hutool.lang.Validator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +30,9 @@ public class UserResource {
         this.userService = userService;
     }
 
+    @Autowired
+    private MessageService messageService;
+
 
     @PostMapping("/register")
     @ApiOperation(value = "用户注册和登陆 @lss", response = Token.class)
@@ -38,8 +43,11 @@ public class UserResource {
         return ResponseEntity.ok(userService.register(registerRequest));
     }
 
-//    @GetMapping
-
+    @GetMapping
+    public ResponseEntity send(@Valid @RequestParam String phoneNumber){
+        messageService.send(phoneNumber);
+        return ResponseEntity.ok().build();
+    }
 
 
 

@@ -12,4 +12,12 @@ import org.springframework.stereotype.Service;
 public class MessageService {
 
 
+    public void send(String phoneNumber){
+
+
+
+
+    }
+
+
 }

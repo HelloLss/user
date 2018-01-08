@@ -7,6 +7,8 @@ package com.lss.user.exception;
 public class UserException extends RuntimeException {
 
     private String message;
+    private int code;
+
 
     public UserException(){
 
@@ -17,4 +19,8 @@ public class UserException extends RuntimeException {
     }
 
 
+    public UserException(String message, int code) {
+        this.message = message;
+        this.code = code;
+    }
 }
