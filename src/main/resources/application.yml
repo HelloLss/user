@@ -53,3 +53,9 @@ jwt:
     base64Secret: OTF6MjM0OTh5dGhncmlnZWhhbmdkYWVyZ2VyZ24=
     name: 91zhangdan
     expiresMillis: 2592000000 # 三十天
+
+sms:
+    account: sdk_91zd
+    password: kdgfhg23
+    signature: 【Buff电竞】
+    send: true

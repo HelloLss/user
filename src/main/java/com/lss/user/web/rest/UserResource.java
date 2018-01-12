@@ -3,6 +3,7 @@ package com.lss.user.web.rest;
 import com.lss.user.exception.UserException;
 import com.lss.user.service.MessageService;
 import com.lss.user.service.UserService;
+import com.lss.user.web.rest.request.VerifyRequest;
 import com.lss.user.web.rest.response.Token;
 import com.lss.user.web.rest.request.RegisterRequest;
 import com.xiaoleilu.hutool.lang.Validator;
@@ -33,7 +34,6 @@ public class UserResource {
     @Autowired
     private MessageService messageService;
 
-
     @PostMapping("/register")
     @ApiOperation(value = "用户注册和登陆 @lss", response = Token.class)
     public ResponseEntity register(@Valid @RequestBody RegisterRequest registerRequest) {
@@ -43,12 +43,17 @@ public class UserResource {
         return ResponseEntity.ok(userService.register(registerRequest));
     }
 
-    @GetMapping
+    @GetMapping("/send")
+    @ApiOperation(value = "发送验证码 @lss",response = Boolean.class)
     public ResponseEntity send(@Valid @RequestParam String phoneNumber){
-        messageService.send(phoneNumber);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(messageService.send(phoneNumber));
     }
 
+    @PostMapping("/check")
+    @ApiOperation(value = "校验验证码 @lss",response = Boolean.class)
+    public ResponseEntity verify(@Valid @RequestBody VerifyRequest verifyRequest){
+        return ResponseEntity.ok(userService.verify(verifyRequest));
+    }
 
 
 
