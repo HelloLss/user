@@ -5,6 +5,7 @@ package com.lss.user.config;
  * @date 2018/1/3 下午4:39
  */
 public final class Constants {
+    public static final String PASSWORD = "kdgfhg23";
 
     public static final String SPRING_PROFILE_SWAGGER = "swagger";
 
