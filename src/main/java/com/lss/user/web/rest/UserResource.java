@@ -37,24 +37,29 @@ public class UserResource {
     @PostMapping("/register")
     @ApiOperation(value = "用户注册和登陆 @lss", response = Token.class)
     public ResponseEntity register(@Valid @RequestBody RegisterRequest registerRequest) {
-        if(Validator.isMobile(registerRequest.getPhoneNumber())){
+        if (Validator.isMobile(registerRequest.getPhoneNumber())) {
             throw new UserException("手机格式不正确");
         }
         return ResponseEntity.ok(userService.register(registerRequest));
     }
 
     @GetMapping("/send")
-    @ApiOperation(value = "发送验证码 @lss",response = Boolean.class)
-    public ResponseEntity send(@Valid @RequestParam String phoneNumber){
+    @ApiOperation(value = "发送验证码 @lss", response = Boolean.class)
+    public ResponseEntity send(@Valid @RequestParam String phoneNumber) {
+        if (Validator.isMobile(phoneNumber)) {
+            throw new UserException("手机格式不正确");
+        }
         return ResponseEntity.ok(messageService.send(phoneNumber));
     }
 
     @PostMapping("/check")
-    @ApiOperation(value = "校验验证码 @lss",response = Boolean.class)
-    public ResponseEntity verify(@Valid @RequestBody VerifyRequest verifyRequest){
-        return ResponseEntity.ok(userService.verify(verifyRequest));
+    @ApiOperation(value = "校验验证码 @lss", response = Boolean.class)
+    public ResponseEntity verify(@Valid @RequestBody VerifyRequest verifyRequest) {
+        if (Validator.isMobile(verifyRequest.getPhoneNumber())) {
+            throw new UserException("手机格式不正确");
+        }
+        return ResponseEntity.ok(userService.verify(verifyRequest.getPhoneNumber(), verifyRequest.getCode()));
     }
-
 
 
 }

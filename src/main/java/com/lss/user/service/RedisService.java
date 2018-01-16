@@ -22,6 +22,8 @@ public class RedisService {
 
     public static final String VERIFICATION_CODE = "verification_code :";
 
+    public static final String LOGIN_TOKEN = "login_token :";
+
     @Autowired
     private RedisUtil redisUtil;
 
@@ -54,7 +56,7 @@ public class RedisService {
      * @return 放入是否成功
      */
     public boolean putCode(String phoneNumber, String code) {
-        String key = VERIFICATION_CODE + code;
+        String key = VERIFICATION_CODE + phoneNumber;
         increaseCount(phoneNumber);
         return redisUtil.put(key, code, CODE_EXPIRE);
     }
@@ -76,5 +78,38 @@ public class RedisService {
     }
 
 
+    /**
+     * 校验验证码是否正确
+     *
+     * @param account
+     * @param code
+     * @return 是否匹配
+     */
+    public boolean verifyCode(String account, String code) {
+        String key = VERIFICATION_CODE + account;
+        Object o = redisUtil.get(key);
+        if (o == null) {
+            return false;
+        }
+        return code.equalsIgnoreCase(o.toString());
+    }
+
+    /**
+     * 移除
+     *
+     * @param account
+     * @return
+     */
+    public boolean removeCode(String account) {
+        String key = VERIFICATION_CODE + account;
+        redisUtil.remove(key);
+        return true;
+    }
+
+
+    public void putUserToken(int userId, String token, Long expiresMillis) {
+        String key = LOGIN_TOKEN + userId;
+        redisUtil.putByMillis(key, token, expiresMillis);
+    }
 
 }
