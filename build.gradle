@@ -4,7 +4,7 @@ buildscript {
     }
     repositories {
         maven {
-            url 'http://nexus.91zdan.com/nexus/content/groups/public/'
+            url 'http://maven.aliyun.com/nexus/content/groups/public'
         }
         mavenCentral()
         jcenter()
