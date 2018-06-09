@@ -1,8 +1,6 @@
 # user
 
-`Not Mirco Service`
-
-基于JWT加密的注册和登陆模拟
+基于JWT加密的注册和登陆
 
 ## Development
 

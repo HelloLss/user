@@ -22,7 +22,6 @@ public class MessageService {
     private static final BusinessService service = new BusinessService(JIANZHOU_ENDPOINT);
     private static final String SMS_TEMPLATE = "您的验证码为: {} 十分钟内有效.";
 
-
     @Autowired
     private RedisService redisService;
 

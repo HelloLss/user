@@ -56,6 +56,14 @@ jwt:
 
 sms:
     account: sdk_91zd
-    password: kdgfhg23
+    password:
     signature: 【Buff电竞】
     send: true
+
+liquibase:
+    change-log: classpath:liquibase/master.xml
+    user: root
+    password: 77545211
+    url: jdbc:mysql://localhost:3306/user
+    enabled: true
+    drop-first: false

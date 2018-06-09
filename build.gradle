@@ -57,7 +57,7 @@ dependencies {
     compile('mysql:mysql-connector-java:5.1.44')
     compile("com.baomidou:mybatisplus-spring-boot-starter:1.0.5")
     compile("com.baomidou:mybatis-plus:2.1.4")
-//    compile("org.liquibase:liquibase-core:3.5.3")
+    compile("org.liquibase:liquibase-core:3.5.3")
     compile("com.alibaba:druid:1.1.5")
 
 
